@@ -1,3 +1,10 @@
 julia 0.6
 CoordinateTransformations
+ASTInterpreter2
+JSON
+LightGraphs
 OpenCL
+MAT
+NLopt
+Clp
+JuMP
