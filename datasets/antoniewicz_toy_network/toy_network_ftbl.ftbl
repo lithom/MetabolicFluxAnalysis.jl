@@ -1,0 +1,18 @@
+NETWORK
+	FLUX_NAME	EDUCT_1	EDUCT_2	PRODUCT_1	PRODUCT_2
+  R01 sA    sB
+    #ABC    #ABC
+
+  R02 sB    sD
+    #ABC    #ABC
+
+  R03 sD    sB
+    #ABC    #ABC
+
+  R04 sB    sC  sE
+    #ABC    #BC #A
+
+  R05a  sB  sC  sD
+
+
+  R06

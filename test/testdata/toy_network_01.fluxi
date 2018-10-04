@@ -1,0 +1,43 @@
+SpeciesStart:
+sA:3
+sB:3
+sC:2
+sD:3
+sE:1
+sF:3
+SpeciesEnd:
+
+FluxesStart:
+R01 : sA(1-2-3) --> sB(1-2-3)
+R02 : sB(1-2-3) --> sD(1-2-3)
+R03 : sD(1-2-3) --> sB(1-2-3)
+R04 : sB(1-2-3) --> sC(2-3) + sE(1)
+R05 : sB(1-2-3) + sC(4-5) --> sD(2-3-4) + sE(1) + sE(5)
+R06 : sD(1-2-3) --> sF(1-2-3)
+R_Ain  : * --> sA
+R_Eout :  sE(1-2-3) --> *
+R_Fout :  sF(1-2-3) --> *
+FluxesEnd:
+
+MeasurementsSetStart:{MassDistribution_01}
+sF[1,2,3] {
+M=0 : 0.0001  , 0.01 , 0
+M=1 : 0.8008  , 0.01 , 0
+M=2 : 0.1983  , 0.01 , 0
+M=3 : 0.0009  , 0.01 , 0
+}
+MeasurementsSetEnd:{MassDistribution_01}
+
+
+SubstrateConfigurationStart:{SC_010}
+sA : (0,1,0)=1.0
+SubstrateConfigurationEnd:{SC_010}
+SubstrateConfigurationStart:{SC_010_B}
+sA : (0,1,0)=0.99 ; (0,1,1)=0.01
+SubstrateConfigurationEnd:{SC_010_B}
+
+LinearConstraintsSetStart:{ConstraintsExchange}
+R_Ain = 100
+R_Eout > 0
+R_Fout > 0
+LinearConstraintsSetEnd:{ConstraintsExchange}
